@@ -1,6 +1,6 @@
 package com.auth.auth.service;
 
-import com.auth.auth.models.Utilisateur;
+import com.auth.auth.Entity.Utilisateur;
 import com.auth.auth.repository.UtilisateurRepository;
 import org.springframework.stereotype.Service;
 

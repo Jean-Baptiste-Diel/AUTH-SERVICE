@@ -1,6 +1,6 @@
 package com.auth.auth.service;
 
-import com.auth.auth.models.PieceIdentiter;
+import com.auth.auth.Entity.PieceIdentiter;
 import com.auth.auth.repository.PieceIdentiterRepository;
 import org.springframework.stereotype.Service;
 

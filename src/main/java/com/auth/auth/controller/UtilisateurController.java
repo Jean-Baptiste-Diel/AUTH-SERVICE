@@ -1,6 +1,6 @@
 package com.auth.auth.controller;
 
-import com.auth.auth.models.Utilisateur;
+import com.auth.auth.Entity.Utilisateur;
 import com.auth.auth.service.UtilisateurService;
 import com.auth.auth.utils.JwtUtil;
 import org.springframework.http.HttpStatus;

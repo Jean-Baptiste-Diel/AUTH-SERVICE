@@ -1,6 +1,6 @@
 package com.auth.auth.controller;
 
-import com.auth.auth.models.PieceIdentiter;
+import com.auth.auth.Entity.PieceIdentiter;
 import com.auth.auth.service.PieceIdentiterService;
 import org.springframework.web.bind.annotation.*;
 
