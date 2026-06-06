@@ -1,15 +1,14 @@
 package com.auth.auth.controller;
 
+import com.auth.auth.dto.AuthResponse;
+import com.auth.auth.dto.LoginRequest;
+import com.auth.auth.dto.RegisterRequest;
 import com.auth.auth.entity.Utilisateur;
 import com.auth.auth.service.UtilisateurService;
 import com.auth.auth.utils.JwtUtil;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
-
-// Uniquement l'inscription et la connexion.
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
@@ -26,48 +25,53 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(
-            @RequestBody Utilisateur utilisateur
+    public ResponseEntity<AuthResponse> register(
+            @RequestBody RegisterRequest request
     ) {
 
-        Utilisateur saved =
-                service.save(utilisateur);
+        Utilisateur utilisateur = new Utilisateur();
 
-        String token =
-                jwtUtil.generateToken(
-                        saved.getNumero(),
-                        saved.getPrenom()
-                );
+        utilisateur.setNom(request.getNom());
+        utilisateur.setPrenom(request.getPrenom());
+        utilisateur.setNumero(request.getNumero());
+        utilisateur.setMotDePasse(request.getMotDePasse());
+
+        Utilisateur saved = service.save(utilisateur);
+
+        String token = jwtUtil.generateToken(
+                saved.getNumero(),
+                saved.getPrenom()
+        );
 
         return ResponseEntity.ok(
-                Map.of(
-                        "success", true,
-                        "token", token
+                new AuthResponse(
+                        true,
+                        token,
+                        "Compte créé avec succès"
                 )
         );
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(
-            @RequestBody Utilisateur utilisateur
+    public ResponseEntity<AuthResponse> login(
+            @RequestBody LoginRequest request
     ) {
 
-        Utilisateur user =
-                service.login(
-                        utilisateur.getNumero(),
-                        utilisateur.getMotDePasse()
-                );
+        Utilisateur user = service.login(
+                request.getNumero(),
+                request.getMotDePasse()
+        );
 
-        String token =
-                jwtUtil.generateToken(
-                        user.getNumero(),
-                        user.getPrenom()
-                );
+        String token = jwtUtil.generateToken(
+                user.getNumero(),
+                user.getPrenom()
+        );
 
         return ResponseEntity.ok(
-                Map.of(
-                        "success", true,
-                        "token", token
+                new AuthResponse(
+                        true,
+                        token,
+                        "Connexion réussie"
                 )
         );
     }
