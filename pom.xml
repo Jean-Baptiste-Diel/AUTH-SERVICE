@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.apkMoney</groupId>
-	<artifactId>apkMoney</artifactId>
+	<artifactId>auth</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>apkMoney</name>
 	<description>project for Spring Boot apk de transfert d&apos;argent</description>

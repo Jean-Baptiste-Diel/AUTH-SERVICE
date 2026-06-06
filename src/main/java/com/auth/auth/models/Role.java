@@ -1,4 +1,4 @@
-package com.apkMoney.apkMoney.models;
+package com.auth.auth.models;
 
 import jakarta.persistence.*;
 import lombok.*;

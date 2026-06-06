@@ -1,6 +1,6 @@
-package com.apkMoney.apkMoney.repository;
+package com.auth.auth.repository;
 
-import com.apkMoney.apkMoney.models.Utilisateur;
+import com.auth.auth.models.Utilisateur;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

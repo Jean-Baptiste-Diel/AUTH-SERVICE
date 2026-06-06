@@ -1,8 +1,8 @@
-package com.apkMoney.apkMoney.controller;
+package com.auth.auth.controller;
 
-import com.apkMoney.apkMoney.models.Utilisateur;
-import com.apkMoney.apkMoney.service.UtilisateurService;
-import com.apkMoney.apkMoney.utils.JwtUtil;
+import com.auth.auth.models.Utilisateur;
+import com.auth.auth.service.UtilisateurService;
+import com.auth.auth.utils.JwtUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

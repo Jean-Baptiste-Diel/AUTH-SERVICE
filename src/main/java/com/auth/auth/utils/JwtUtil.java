@@ -1,4 +1,4 @@
-package com.apkMoney.apkMoney.utils;
+package com.auth.auth.utils;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

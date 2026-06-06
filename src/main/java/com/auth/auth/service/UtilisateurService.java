@@ -1,7 +1,7 @@
-package com.apkMoney.apkMoney.service;
+package com.auth.auth.service;
 
-import com.apkMoney.apkMoney.models.Utilisateur;
-import com.apkMoney.apkMoney.repository.UtilisateurRepository;
+import com.auth.auth.models.Utilisateur;
+import com.auth.auth.repository.UtilisateurRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

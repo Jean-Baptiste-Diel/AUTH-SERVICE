@@ -1,7 +1,7 @@
-package com.apkMoney.apkMoney.controller;
+package com.auth.auth.controller;
 
-import com.apkMoney.apkMoney.models.PieceIdentiter;
-import com.apkMoney.apkMoney.service.PieceIdentiterService;
+import com.auth.auth.models.PieceIdentiter;
+import com.auth.auth.service.PieceIdentiterService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
