@@ -2,16 +2,11 @@ package com.apkMoney.apkMoney.service;
 
 import com.apkMoney.apkMoney.models.Utilisateur;
 import com.apkMoney.apkMoney.repository.UtilisateurRepository;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
-@CrossOrigin(origins = "http://localhost:3000")
 public class UtilisateurService {
     private final UtilisateurRepository repository;
 
@@ -35,8 +30,7 @@ public class UtilisateurService {
         repository.deleteById(id);
     }
 
-    public Optional<Utilisateur> login(String numero, String motDePasse) {
-        // TODO:
+    public boolean login(String numero, String motDePasse) {
         return repository.findByNumeroAndMotDePasse(numero, motDePasse);
     }
 }
