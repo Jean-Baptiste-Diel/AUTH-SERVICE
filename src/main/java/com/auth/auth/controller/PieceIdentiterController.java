@@ -1,6 +1,6 @@
 package com.auth.auth.controller;
 
-import com.auth.auth.Entity.PieceIdentiter;
+import com.auth.auth.entity.PieceIdentiter;
 import com.auth.auth.service.PieceIdentiterService;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +12,9 @@ public class PieceIdentiterController {
 
     private final PieceIdentiterService service;
 
-    public PieceIdentiterController(PieceIdentiterService service) {
+    public PieceIdentiterController(
+            PieceIdentiterService service
+    ) {
         this.service = service;
     }
 
@@ -22,22 +24,31 @@ public class PieceIdentiterController {
     }
 
     @GetMapping("/{id}")
-    public PieceIdentiter getById(@PathVariable Long id) {
+    public PieceIdentiter getById(
+            @PathVariable Long id
+    ) {
         return service.getById(id);
     }
 
-    @PutMapping("/{id}")
-    public PieceIdentiter updateById(PieceIdentiter pieceIdentiter) {
-        return service.update(pieceIdentiter);
+    @PostMapping
+    public PieceIdentiter save(
+            @RequestBody PieceIdentiter piece
+    ) {
+        return service.save(piece);
     }
 
-    @PostMapping
-    public PieceIdentiter save(@RequestBody PieceIdentiter pieceIdentiter) {
-        return service.save(pieceIdentiter);
+    @PutMapping("/{id}")
+    public PieceIdentiter update(
+            @PathVariable Long id,
+            @RequestBody PieceIdentiter piece
+    ) {
+        return service.update(id, piece);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable Long id) {
+    public void delete(
+            @PathVariable Long id
+    ) {
         service.delete(id);
     }
 }

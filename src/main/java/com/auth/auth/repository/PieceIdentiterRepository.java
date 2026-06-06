@@ -1,6 +1,6 @@
 package com.auth.auth.repository;
 
-import com.auth.auth.Entity.PieceIdentiter;
+import com.auth.auth.entity.PieceIdentiter;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
